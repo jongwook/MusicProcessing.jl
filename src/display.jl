@@ -1,3 +1,4 @@
+import Base.show
 
 # methods to translate
 
@@ -16,11 +17,11 @@ function yticklabels(tfr::MFCC, yticks::Array)
     map(Int, map(round, yticks)), "MFCC number"
 end
 
-heatmap(tfr::DSP.Periodograms.TFR) = log10(power(tfr))
+heatmap(tfr::DSP.Periodograms.TFR) = map(x -> log(10,x), tfr.power)
 
 function draw_heatmap(tfr::DSP.Periodograms.TFR)
-    X = time(tfr)
-    Y = freq(tfr)
+    X = tfr.time
+    Y = tfr.freq
     Z = heatmap(tfr)
 
     PyPlot.pcolormesh(X, Y, Z)

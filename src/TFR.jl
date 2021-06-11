@@ -238,7 +238,7 @@ function phase_vocoder(stft::Array{Complex{T}, 2},
 
         # store to output array
         cis!(cis_phase, phase_acc)
-        multiply!(cis_phase, cis_phase, mag)
+        cis_phase .= cis_phase .* mag
         for i in 1:nbins
             stretched[i, t] = cis_phase[i]
         end

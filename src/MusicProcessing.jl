@@ -3,6 +3,7 @@ module MusicProcessing
 using DSP
 using FFTW
 using FixedPointNumbers
+using LinearAlgebra
 using Requires
 using Unitful
 using IntervalSets
