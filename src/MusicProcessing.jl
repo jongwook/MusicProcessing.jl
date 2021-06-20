@@ -37,7 +37,7 @@ export melspectrogram, mfcc
 export spectrogram, stft, istft, phase_vocoder
 
 function __init__()
-    @require PyPlot="d330b81b-6aea-500a-939a-2ce795aea3ee" include("display.jl")
+    @require GLMakie = "e9467ef8-e4e7-5192-8a1a-b1aee30e663a" include("display.jl")
 end
 
 end # module
